@@ -1,6 +1,4 @@
-var i = function(){
-	2* Math.random();
-}
+var i =	2* Math.random();
 
 if (i>1){
 	console.log('Kopf');
@@ -20,5 +18,6 @@ var j = function(){
 		console.log('Papier');
 	}
 }
+j();
 
 	
