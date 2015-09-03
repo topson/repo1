@@ -8,7 +8,6 @@ function Multi (num1, num2){
 var x = Math.random();
 var rndm = new Multi(x, 100);
 var precent = rndm.calc();
-var die = [1, 2, 3, 4, 5, 6];
 var dice = [[1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6]];
 
 var roll = function(idx){
