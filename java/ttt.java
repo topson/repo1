@@ -5,7 +5,6 @@ class ttt {
 		
 		TTTGame game = new TTTGame();
 		game.run();
-		game.choice();
 	}
 
 
