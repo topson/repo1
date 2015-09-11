@@ -1,0 +1,65 @@
+[33mcommit c68b319ec73d105c9d3c7bb027e47f706b7eb2e9[m
+Author: tbi <tbi@tbi.com>
+Date:   Fri Sep 4 16:43:46 2015 +0200
+
+    deleted redundant file
+
+[33mcommit 04c78d7037ac92939fd1b93d6d228d8bfaea20a9[m
+Author: tbi <tbi@tbi.com>
+Date:   Fri Sep 4 16:30:58 2015 +0200
+
+    changed file names, added stable DB connection
+
+[33mcommit ae4f2f64ca6f3fdbdeb4a227f208534c2c2238a0[m
+Author: tbi <tbi@tbi.com>
+Date:   Fri Sep 4 15:08:41 2015 +0200
+
+    JS SQL Connection script added
+
+[33mcommit f51df6a9060b21c3d02e84bde694deb19b5db63b[m
+Author: tbi <tbi@tbi.com>
+Date:   Fri Sep 4 09:16:57 2015 +0200
+
+    removed redundancies
+
+[33mcommit 0db3920401d425d55cdaef0d08c47ddbc1dbc5fc[m
+Author: tbi <tbi@tbi.com>
+Date:   Thu Sep 3 14:46:28 2015 +0200
+
+    Removed redundancy from gittest.js
+
+[33mcommit 8807240a713b2d5b1b008acebb8bb9e8fd344e51[m
+Author: tbi <tbi@tbi.com>
+Date:   Thu Sep 3 14:43:40 2015 +0200
+
+    Fixed Bug in Kopf oder Zahl
+
+[33mcommit 09876eda285e556b8f1d7e898e989915f6273cbc[m
+Author: tbi <tbi@tbi.com>
+Date:   Thu Sep 3 14:37:38 2015 +0200
+
+    Dice function added
+
+[33mcommit 5b3382faa657f05ac8a65c81dfdf839c052cdb22[m
+Author: tbi <tbi@tbi.com>
+Date:   Thu Sep 3 09:29:31 2015 +0200
+
+    Added new working dir erstertest/ and moved more.js and test.js into it
+
+[33mcommit ca142fcf6e1b568d24f6ae4963bfb8af03eec33a[m
+Author: tbi <tbi@tbi.com>
+Date:   Thu Sep 3 09:09:07 2015 +0200
+
+    more.js hinzugfügt
+
+[33mcommit e6378dc9f2e204d68311b06ded0faa520c6be044[m
+Author: tbi <tbi@tbi.com>
+Date:   Wed Sep 2 16:27:14 2015 +0200
+
+    test.js was updated since last commit
+
+[33mcommit 1bfb515a629c9d3e66595f0c12acb96d682287c7[m
+Author: tbi <tbi@tbi.com>
+Date:   Wed Sep 2 15:36:12 2015 +0200
+
+    test.js added
