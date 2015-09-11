@@ -1,7 +1,12 @@
+
 import java.util.*;
 import java.io.*;
 
 public class TTTGame{
+
+	private static final String playerIcons[] = {"X", "O"};
+
+	private boardData int[]; 
 	
 	private String i [] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
 	private int counter = 0;
@@ -21,21 +26,50 @@ public class TTTGame{
 		player = spieler;
 	}
 
-	public void run () {
-		System.out.println("-------------");
-		System.out.println(" --- --- --- ");
-		System.out.println("| " + i[0]+" | " + i[1]+" | " + i[2]+" |");
-		System.out.println(" --- --- --- ");
-		System.out.println(" --- --- --- ");
-		System.out.println("| " + i[3]+" | " + i[4]+" | " + i[5]+" |");
-		System.out.println(" --- --- --- ");
-		System.out.println(" --- --- --- ");
-		System.out.println("| " + i[6]+" | " + i[7]+" | " + i[8]+" |");
-		System.out.println(" --- --- --- ");
-		System.out.println("-------------");
-		if (over){
-			System.out.println("The Game is over! "+ player + " has won!");
+	public TTTGame() {
+		boardData = new int[9];
+		for( int i = 0; i < 9; ++i) 
+			boardData[i] = -1;
 		}
+
+	}
+
+	public String getIconforSlot(int slot) {
+		int value = boardData[slot];
+		if( value == -1 ) {
+			return " ";
+		}
+		else {
+			return playerIcons[value];
+		}
+	}
+
+	public void drawBoard() {
+
+		System.out.println("-------------");
+		System.out.println(" --- --- --- ");
+		System.out.println("| " + getIconForSlot(0)+" | " + getIconForSlot(1)+" | " + getIconForSlot(2)+" |");
+		System.out.println(" --- --- --- ");
+		System.out.println(" --- --- --- ");
+		System.out.println("| " + getIconForSlot(3)+" | " +  getIconForSlot(4) +" | " +  getIconForSloti(5)+" |");
+		System.out.println(" --- --- --- ");
+		System.out.println(" --- --- --- ");
+		System.out.println("| " +  getIconForSlot(6)+" | " +  getIconForSlot(7)+" | " +  getIconForSlot(8)+" |");
+		System.out.println(" --- --- --- ");
+		System.out.println("-------------");
+	}
+
+	public void run () {
+
+		while(!over) {
+			drawBoard();
+			choose();
+			check();
+			
+		}
+
+			System.out.println("The Game is over! "+ player + " has won!");
+		
 		else {
 		setCounter(counter);
 		choose();
@@ -44,10 +78,24 @@ public class TTTGame{
 
 	public void choose(){
 		if (counter % 2 != 0){
-			try {
-			System.out.println ("Player1 choose your field(1-9)");
+			
+			System.out.println ("Player" + currentPlayer + " choose your field(1-9)");
 			Scanner sc = new Scanner(System.in);
-			int inp = sc.nextInt();
+			int inp = -1;
+			
+			try {
+				sc.nextInt();
+			}
+			catch (InputMismatchException e1){
+
+					System.out.println("Not a valid choice, please try again");
+					return;
+					
+					choose();
+			}
+
+
+
 			if (inp < 1 || inp > 9){
 				System.out.println("Not a valid choice, please try again");
 				choose();
@@ -60,11 +108,6 @@ public class TTTGame{
 					System.out.println("Not a valid choice, please try again");
 					choose();
 				}
-			}
-			}catch (InputMismatchException e1){
-
-					System.out.println("Not a valid choice, please try again");
-					choose();
 			}
 		}
 		else {
