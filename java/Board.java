@@ -1,26 +1,27 @@
 public class Board {
 
 	public void draw (){
-		
-		String input = " ";
-		String values [] = {"|", input, "-"};
-		int counter = 1;
-		String box[]={values[0]," ",values[1]," ",values[0]};
+		int counter= 0;
+		String values[]={"|", " ", "-"};
+		String input[]= {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+		String box[]= {values[0], input[counter], values[0]}; 
 
-		for (int i=0; i<5; i++){
-			if (i%2==0){
-				for (int j=0; j<3; j++){
-					if (j==2){
+		
+		for (int k=0; k<5; k++){
+			if (k%2==0){
+				for (int l=0; l<3; l++){
+					if (l==2){
 						System.out.print(box+"\n");
 					}
-					else {
+					else{
 						System.out.print(box);
 					}
+					counter++;
 				}
 			}
 			else{
-				for (int k=0; k<15; k++){
-					if (k==14){
+				for (int m=0; m<15; m++){
+					if (m==14){
 						System.out.print(values[2]+"\n");
 					}
 					else{
