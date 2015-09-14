@@ -5,8 +5,8 @@ class ttt {
 		
 		Board board = new Board();
 		board.draw();
-		TTTGame game = new TTTGame();
-		game.run();
+		//TTTGame game = new TTTGame();
+		//game.run();
 	}
 
 
