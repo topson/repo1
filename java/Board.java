@@ -1,15 +1,23 @@
 public class Board {
-
-	public void draw (){
-		
-		String fields[] = new String[10];
+	
+	private String fields[] = new String[10];
+	private int round = -1;
+	
+	public void	initializeBoard (){
 		for (int l=0; l<9;l++){
 			fields[l]=String.valueOf(l+1);
 		}
+		draw();
+	}
+	public void changeBoard (int indexOne, String symbol){
+		fields[indexOne-1]=symbol;
+		draw();
+	}
+
+	public void draw (){
 		String values [] = {"|", " ", "-"};
 		int counter = 0;
 		
-
 		for (int i=0; i<5; i++){
 			if (i%2==0){
 				for (int j=0; j<3; j++){
@@ -34,5 +42,9 @@ public class Board {
 				}
 			}
 		}
+		round++;
+		Input input	= new Input();
+		input.write(round);
 	}
+	
 }
