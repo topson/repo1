@@ -2,10 +2,13 @@ public class Board {
 
 	public void draw (){
 		
-		String input = " ";
-		String values [] = {"|", input, "-"};
-		int counter = 1;
-		String box[]={values[0]," ",values[1]," ",values[0]};
+		String input[] = new String[10];
+		for (int l=0; l<9;l++){
+			input[l]=String.valueOf(l+1);
+		}
+		String values [] = {"|", " ", "-"};
+		int counter = 0;
+		String box=values[0]+values[1]+input[counter]+values[1]+values[0];
 
 		for (int i=0; i<5; i++){
 			if (i%2==0){
@@ -16,6 +19,7 @@ public class Board {
 					else {
 						System.out.print(box);
 					}
+					counter++;
 				}
 			}
 			else{
