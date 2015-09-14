@@ -14,7 +14,7 @@ class Input {
         else{
             symbol=playerIcons[1];
         }
-        
+        System.out.println("Please choose a field:");
         Scanner sc = new Scanner(System.in);
 		int inp = sc.nextInt();
 		
