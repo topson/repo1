@@ -5,6 +5,7 @@ class Input {
     
     private String [] playerIcons = {"X", "O"};
     private String symbol;
+	Board board = new Board();
     
     public void write (int player){
         
