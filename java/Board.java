@@ -34,7 +34,14 @@ public class Board {
 		}				
 	}
 	public void saveBoard (String oneOfTwo, int leCount){
-		arrList.set(leCount, oneOfTwo);			
+		int idx = leCount;
+		String plvalue = oneOfTwo;
+		if (arrList.size()==10){
+			arrList.set(idx, plvalue);
+		}
+		else {
+			arrList.add(idx, plvalue);
+		}			
 	}
 
 	public void draw (int fieldnr, String playericon){
