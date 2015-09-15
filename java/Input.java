@@ -5,7 +5,7 @@ class Input {
     
     private String [] playerIcons = {"X", "O"};
     private String symbol;
-	Board board = new Board();
+    Board board = new Board();
     
     public void write (int player){
         
@@ -17,10 +17,10 @@ class Input {
         }
         System.out.println("Please choose a field:");
         Scanner sc = new Scanner(System.in);
-		int inp = sc.nextInt();
+	int inp = sc.nextInt();
 		
-		Board board = new Board();
-        board.changeBoard(inp, symbol);
+	Board board = new Board();
+        board.draw(inp, symbol);
     }
     
 }

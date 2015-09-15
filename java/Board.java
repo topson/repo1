@@ -1,27 +1,54 @@
+import java.util.*;
+import java.io.*;
+
+
 public class Board {
 	
 	private String fields[] = new String[10];
 	int round = -1;
+	ArrayList<String> arrList = new ArrayList<String>();
 	
 	public void	initializeBoard (){
 		for (int l=0; l<9;l++){
 			fields[l]=String.valueOf(l+1);
+		draw(10, "X");
 		}
-		draw();
 	}
 	public void changeBoard (int indexOne, String symbol){
-		fields[indexOne-1]=symbol;
-		draw();
+		if (fields[indexOne-1]!="X" && fields[indexOne-1]!="O"){	
+			fields[indexOne-1]=symbol;
+		}
+		else{
+			System.out.println("Field already taken");
+			
+		}
+			
+	}
+	public void loadBoard (){
+		for (int k=0; k<9;k++){
+			if (arrList.size()!=0){
+				fields[k]=arrList.get(k);
+			}
+			else{
+			}
+		}				
+	}
+	public void saveBoard (String oneOfTwo, int leCount){
+		arrList.set(leCount, oneOfTwo);			
 	}
 
-	public void draw (){
-		
+	public void draw (int fieldnr, String playericon){
 		String values [] = {"|", " ", "-"};
 		int counter = 0;
+		int fieldnmbr = fieldnr;		
+		String playersIcon = playericon;
+		loadBoard();
+		changeBoard(fieldnmbr, playersIcon);	
 		for (int i=0; i<5; i++){
 			if (i%2==0){
 				for (int j=0; j<3; j++){
 					String box=values[0]+values[1]+fields[counter]+values[1]+values[0];
+					saveBoard(fields[counter], counter);
 					if (j==2){
 						System.out.print(box+"\n");
 					}
