@@ -5,10 +5,10 @@ class Input {
     
     private String [] playerIcons = {"X", "O"};
     private String symbol;
-    Board board = new Board();
     
     public void write (int player){
-        
+	Board board = new Board();
+        board.loadBoard();
         if (player%2==0){
             symbol=playerIcons[0];
         }
@@ -18,8 +18,7 @@ class Input {
         System.out.println("Please choose a field:");
         Scanner sc = new Scanner(System.in);
 	int inp = sc.nextInt();
-		
-	Board board = new Board();
+	board.saveBoard(symbol, inp-1);	
         board.draw(inp, symbol);
     }
     

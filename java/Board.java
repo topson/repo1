@@ -8,12 +8,13 @@ public class Board {
 	int round = -1;
 	ArrayList<String> arrList = new ArrayList<String>();
 	
-	public void	initializeBoard (){
-		for (int l=0; l<9;l++){
-			fields[l]=String.valueOf(l+1);
-		draw(10, "X");
-		}
-	}
+	//public void	initializeBoard (){
+	//	for (int l=0; l<9;l++){
+	//		fields[l]=String.valueOf(l+1);
+	//		saveBoard(fields[l], l);
+	//	}
+	//	draw(10, "X");
+	//}
 	public void changeBoard (int indexOne, String symbol){
 		if (fields[indexOne-1]!="X" && fields[indexOne-1]!="O"){	
 			fields[indexOne-1]=symbol;
@@ -24,14 +25,15 @@ public class Board {
 		}
 			
 	}
-	public void loadBoard (){
+	public String[] loadBoard (){
 		for (int k=0; k<9;k++){
-			if (arrList.size()!=0){
+			if (arrList.size()==9){
 				fields[k]=arrList.get(k);
 			}
 			else{
+				fields[k]=String.valueOf(k+1);
 			}
-		}				
+		return fields[k];				
 	}
 	public void saveBoard (String oneOfTwo, int leCount){
 		int idx = leCount;
@@ -49,7 +51,7 @@ public class Board {
 		int counter = 0;
 		int fieldnmbr = fieldnr;		
 		String playersIcon = playericon;
-		loadBoard();
+	//	loadBoard();
 		changeBoard(fieldnmbr, playersIcon);	
 		for (int i=0; i<5; i++){
 			if (i%2==0){
