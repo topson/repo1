@@ -1,20 +1,19 @@
 import java.util.*;
 import java.io.*;
 
-
-public class Board {
+class Board {
 	
+	public static String [][]currBoard = new String[3][3];
+	
+	public String[][] getBoard (){
 
-	public String[] getBoard (){
-
-		return board[][];
+		return this.currBoard;
 
 	}
 	
-	public void setBoard (Strig[][] board){
+	public void setBoard (Renderer board){
 		
-		this.board=board;	
-			
+		this.currBoard=Renderer.board;	
 	}
 
 	
