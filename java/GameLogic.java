@@ -1,33 +1,32 @@
 
 class GameLogic {
 	
-	int counter = 0;
+	static int counter = 0;
+	static int retMessage;
 
-	public void checkMove(Board currBoard, int input){
-		int retMessage;
-		int column = input-1;
-		int row = Math.abs(column/3);
+	public static int checkMove(String[][] currBoard, int input){
+		int column = input - 1;
+		int row = Math.abs(column / 3);
 
-		if (Board.currBoard[row][column%3]!="X" && Board.currBoard[row][column%3]!="O"){
-			if (counter%2==0){
-				retMessage=1;
+		if (currBoard[row][column % 3] != "X" && currBoard[row][column % 3] != "O"){
+			if (counter % 2 == 0){
+				retMessage = 2;
 			}
 			else {
-				retMessage=2;
+				retMessage = 3;
 			}
 			counter++;
 		}
 		else {
 			retMessage = 9;
 		}
+		return retMessage;
 	}
 
-	/*public boolean gameOver(){
+	public static boolean gameOver(String[][] currBoard){
 		
-		boolean over;
-		board.getBoard();
-
-		if (currBoard
-
-	*/	
+		boolean over = false;
+		return over;
+	}
+		
 }
