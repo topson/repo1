@@ -4,7 +4,7 @@ import java.io.*;
 class Input {
 
 
-    private Integer readInput (){
+    private static Integer readInput (){
 
         System.out.println("Please choose a field:");
 		Integer inp = null;
@@ -18,7 +18,7 @@ class Input {
 		return inp;
     }
 	
-	public int getNextInput(){
+	public static int getNextInput(){
 		Integer inp = null;
 		while(null == inp){
 			inp = readInput();

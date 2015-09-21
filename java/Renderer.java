@@ -2,39 +2,47 @@ import java.util.*;
 import java.io.*;
 
 class Renderer{
-	public static String [][]board = new String[3][3];
-	String values [] = {"|", " "};
-	String box=values[0]+values[1]+board+values[1]+values[0];
 
-	public String[][] initialize (){
+	public static String [][] board = new String[3][3];
+	static String values [] = {"|", " ", "X", "O"};
+	static String boxString = values[0] + values[1] + "%s" + values[1] + values[0];
+
+	public static String[][] initialize (){
+
 		int counter = 0;
-		for (int i=0; i<3; i++){
-			for (int j=0; j<3; j++){
+		for (int i = 0; i < 3; i++){
+			for (int j = 0; j < 3; j++){
 				counter++;
-				board[i][j]=String.valueOf(counter);
-				if (j==2){
-					System.out.print(box+"\n");
+				board[i][j] = "" + counter; 
+				String formattedString = String.format(boxString, counter);
+				if (2 == j){
+					formattedString += "\n";
 				}
-				else{
-					System.out.print(box);
-				}
+				System.out.print(formattedString);
 			}
-		}
+		}	
 		return board;
 	}
-	public String[][] draw (Board currBoard){
-		for (int row=0; row<3; row++){
-			for (int column=0; column<3; column++){
-				board[row][column]=Board.currBoard[row][column];
-				if (column==2){
-					System.out.print(box+"\n");
+
+	public String[][] draw (String[][] currBoard, int inp, int retMessage){
+		int calcColumn = (inp - 1) % 3;
+		int calcRow = Math.abs(calcColumn);
+		for (int row = 0; row < 3; row++){
+			for (int column = 0; column < 3; column++){
+				if (row == calcRow && column == calcColumn){
+					board[row][column] = values[retMessage];
 				}
-				else {
-					System.out.print(box);
+				else{
+					board[row][column]=currBoard[row][column];
 				}
+					String formattedString = String.format(boxString, board[row][column]);
+				if (2 == column){
+					formattedString += "\n";
+				}
+				System.out.print(formattedString);
 			}
 		}
-
+		
 	return board;
 	}
 }
