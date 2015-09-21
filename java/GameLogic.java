@@ -3,7 +3,7 @@ class GameLogic {
 	
 	int counter = 0;
 
-	public void checkMove(Board currBoard, int input){
+	public int checkMove(Board currBoard, int input){
 		int retMessage;
 		int column = input-1;
 		int row = Math.abs(column/3);
@@ -20,14 +20,13 @@ class GameLogic {
 		else {
 			retMessage = 9;
 		}
+		return retMessage;
 	}
 
-	/*public boolean gameOver(){
+	/*public boolean gameOver(Board currBoard){
 		
 		boolean over;
-		board.getBoard();
 
-		if (currBoard
-
+	}
 	*/	
 }

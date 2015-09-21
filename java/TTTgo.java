@@ -3,12 +3,13 @@
 class TTTgo {
 	
 	public TTTgo(){
-		while (GameLogic.gameOver!=true){
-		Rederer.initialize();
-		Input.readInput();
-		GameLogic.checkBoard();
-		Board.setBoard();
-		Renderer.draw();
-		
+		Renderer.initialize();
+		while (GameLogic.gameOver()!=true){
+			Input.getNextInput();
+			GameLogic.checkBoard(Board currBoard, int input);
+			Board.setBoard(Board currBoard);
+			Renderer.draw(Board currBoard);
+			GameLogic.gameOver(Board currBoard);
+		}
 	}	
 }
