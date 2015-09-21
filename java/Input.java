@@ -4,15 +4,26 @@ import java.io.*;
 class Input {
 
 
-    public int  readInput (){
-
-        System.out.println("Please choose a field:");
-        Scanner sc = new Scanner(System.in);
-		int inp = sc.nextInt();
+    private static Integer readInput (){
 		
+		System.out.println("Please choose a field:");
+		Integer inp = null;
+		try{
+				Scanner sc = new Scanner(System.in);
+				inp = sc.nextInt();
+		}
+		catch(Exception e1){
+			System.out.println("Invalid Input, try again");
+		}
 		return inp;
 
-
     }
-    
+
+	public static int getNextInput(){
+		Integer inp = null;
+		while(null == inp){
+			inp = readInput();
+		}
+		return inp;
+ 	}   
 }

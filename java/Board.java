@@ -11,9 +11,9 @@ class Board {
 
 	}
 	
-	public void setBoard (Renderer board){
+	public void setBoard (String[][] board){
 		
-		this.currBoard=Renderer.board;	
+		this.currBoard=board;	
 	}
 
 	
