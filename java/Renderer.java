@@ -8,7 +8,6 @@ class Renderer{
 	static String boxString = values[0] + values[1] + "%s" + values[1] + values[0];
 
 	public static String[][] initialize (){
-
 		int counter = 0;
 		for (int i = 0; i < 3; i++){
 			for (int j = 0; j < 3; j++){

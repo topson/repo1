@@ -24,6 +24,7 @@ class GameLogic {
 	}
 
 	public static boolean gameOver(String[][] currBoard){
+
 		boolean over = false;
 		int gg = -1;
 

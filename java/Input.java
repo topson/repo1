@@ -16,7 +16,6 @@ class Input {
 			System.out.println("Invalid Input, try again");
 		}
 		return inp;
-
     }
 
 	public static int getNextInput(){
@@ -26,4 +25,5 @@ class Input {
 		}
 		return inp;
  	}   
+
 }
